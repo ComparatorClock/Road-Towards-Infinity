@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Road Towards Infinity</title>
+</head>
+<body>
+  <div id="loading" style="font: 16px Arial, sans-serif; padding: 20px;">Loading Road Towards Infinity...</div>
+  <script type="module">
+    // Loads Python (Pyodide) in the browser, then runs game.py from the same folder.
+    import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/pyodide.mjs";
+    try {
+      const pyodide = await loadPyodide();
+      const code = await (await fetch("game.py", { cache: "no-cache" })).text();
+      await pyodide.runPythonAsync(code);
+    } catch (err) {
+      document.getElementById("loading").textContent = "The game failed to load: " + err;
+      throw err;
+    }
+  </script>
+</body>
+</html>
