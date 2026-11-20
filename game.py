@@ -21,8 +21,8 @@ from pyodide.ffi.wrappers import clear_timeout, set_interval, set_timeout
 ASSET_BASE = "https://file.garden/ZADcT1kUN2HXG_qX/RoadTowardsInfinity/"
 
 # Pop-up shown every time the site loads, explaining the save cookie. HTML is allowed in the text.
-COOKIE_NOTICE_TITLE = ""
-COOKIE_NOTICE_TEXT = ""
+COOKIE_NOTICE_TITLE = "NOTICE: This Site Uses One Cookie"
+COOKIE_NOTICE_TEXT = "This site uses exactly one cookie - it is for your save-states. It is not used for any data tracking or harvesting purposes, and you can even check and modify the cookie yourself if you so desire. (Even though that's cheating at the game.)"
 
 COOKIE_NAME = "rti_saves"       # The site's single cookie: holds what used to be saves.txt
 COOKIE_PATH = "/"
